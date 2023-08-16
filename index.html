@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Don't have an account?! Want to join us?!</h2>
+
+        <form action="">
+            <div class="form-element">
+                <label for="Name">Name</label><br>
+                <input type="text" placeholder="First name and Last name" class="input-text">
+            </div>
+            <div class="form-element">
+                <label for="Email">Email-Id</label> <br>
+                <input type="email" placeholder="someone@xyz.com" class="input-text">
+            </div>
+            <div class="form-element">
+                <label for="City">Select City</label><br>
+                <select name="symbol" id="symbol" class="input-text ">
+                    <option value="Select">Select</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Chennai">Chennai</option>
+                  </select>
+            </div>
+            <div class="form-element">
+                <label for="gender">Gender</label>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label>
+            </div>
+            <div class="form-element">
+                <label for="Password">Password</label><br>
+                <input type="password" placeholder="Password" class="input-text">
+            </div>
+            <div class="form-element">
+                <input type="checkbox" >
+                <label  for="checkbox">I agree to the terms and conditions</label>
+            </div>
+            <br>
+            <div class="button-container">
+                <input type="submit" class="button btn-1"></input>
+                <input type="reset" class="button btn-2"></input>
+            </div>
+           
+        </form>
+    </div>
+</body>
+</html>
