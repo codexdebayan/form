@@ -63,3 +63,12 @@ label{
 h2{
     text-align: center;
 }
+
+.error{
+    color: crimson;
+    font-size: 12px;
+}
+
+@media screen {
+    
+}

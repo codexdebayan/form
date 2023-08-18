@@ -10,24 +10,27 @@
     <div class="form-container">
         <h2>Don't have an account?! Want to join us?!</h2>
 
-        <form action="">
+        <form action="" name="myForm" onsubmit="return(validation());">
             <div class="form-element">
                 <label for="Name">Name</label><br>
-                <input type="text" placeholder="First name and Last name" class="input-text">
+                <input type="text" placeholder="First name and Last name" class="input-text" name="name" >
+                <span id="errorname" class="error"></span>
             </div>
             <div class="form-element">
                 <label for="Email">Email-Id</label> <br>
-                <input type="email" placeholder="someone@xyz.com" class="input-text">
+                <input type="email" placeholder="someone@xyz.com" class="input-text" name="email" >
+                <span id="erroremail" class="error"></span>
             </div>
             <div class="form-element">
                 <label for="City">Select City</label><br>
-                <select name="symbol" id="symbol" class="input-text ">
+                <select name="cities" id="cities" class="input-text " >
                     <option value="Select">Select</option>
                     <option value="Delhi">Delhi</option>
                     <option value="Kolkata">Kolkata</option>
                     <option value="Mumbai">Mumbai</option>
                     <option value="Chennai">Chennai</option>
                   </select>
+                  <span id="errorcity" class="error"></span>
             </div>
             <div class="form-element">
                 <label for="gender">Gender</label>
@@ -37,14 +40,17 @@
                 <label for="female">Female</label>
                 <input type="radio" id="other" name="gender" value="other">
                 <label for="other">Other</label>
+                <span id="errorgender" class="error"></span>
             </div>
             <div class="form-element">
                 <label for="Password">Password</label><br>
-                <input type="password" placeholder="Password" class="input-text">
+                <input type="password" placeholder="Password" name="password" class="input-text" >
+                <span id="errorpassword" class="error"></span>
             </div>
             <div class="form-element">
-                <input type="checkbox" >
-                <label  for="checkbox">I agree to the terms and conditions</label>
+                <input type="checkbox" name="checkbox"  >
+                <label  for="checkbox" >I agree to the terms and conditions</label>
+                <span id="errorcheck" class="error"></span>
             </div>
             <br>
             <div class="button-container">
@@ -54,5 +60,51 @@
            
         </form>
     </div>
+    <script type="text/javascript">
+        function validation(){
+            var isValid = true;
+
+            if(document.myForm.name.value == ""){
+                document.getElementById("errorname").innerHTML = "*Name cannot be left blank";
+                isValid = false;
+            }else{
+                document.getElementById("errorname").innerHTML = "";
+            }
+
+            if(document.myForm.email.value == ""){
+                document.getElementById("erroremail").innerHTML = "*Email cannot be left blank";
+            }
+            else{
+                document.getElementById("erroremail").innerHTML = ""
+            }
+            if(document.myForm.cities.value == "Select"){
+                document.getElementById("errorcity").innerHTML = "*City cannot be left blank";
+            }
+            else{
+                document.getElementById("errorcity").innerHTML = ""
+            }
+            if(document.myForm.gender.value == ""){
+                document.getElementById("errorgender").innerHTML = "*Gender cannot be left blank";
+            }
+            else{
+                document.getElementById("errorgender").innerHTML = ""
+            }
+            if(document.myForm.password.value == ""){
+                document.getElementById("errorpassword").innerHTML = "*Password cannot be left blank";
+            }
+            else{
+                document.getElementById("errorpassword").innerHTML = ""
+            }
+            
+            if(document.myForm.checkbox.checked == false){
+                document.getElementById("errorcheck").innerHTML = "*Checkbox is unchecked";
+            }
+            else{
+                document.getElementById("errorcheck").innerHTML = ""
+            }
+            
+            return isValid;
+        }
+    </script>
 </body>
 </html>
